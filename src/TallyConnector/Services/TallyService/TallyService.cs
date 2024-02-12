@@ -283,7 +283,8 @@ public partial class TallyService : ITallyService
             RecordsPerPage = objectOptions?.RecordsPerPage,
             XMLAttributeOverrides = objectOptions?.XMLAttributeOverrides,
             IsInitialize = objectOptions?.IsInitialize ?? YesNo.No,
-            DisableCountRequest = objectOptions?.DisableCountRequest ?? false
+            DisableCountRequest = objectOptions?.DisableCountRequest ?? false,
+            Sort = objectOptions?.Sort
         };
         TallyObjectType? tallyObjType = AttributeHelper.GetTallyObjectTypeAttribute(objType);
         var mapping = Mappings.TallyObjectMappings
@@ -529,7 +530,8 @@ public partial class TallyService : ITallyService
                                                    computevar: collectionOptions.ComputeVar,
                                                    compute: collectionOptions.Compute,
                                                    objects: collectionOptions.Objects,
-                                                   isInitialize: collectionOptions.IsInitialize);
+                                                   isInitialize: collectionOptions.IsInitialize,
+                                                   sort: collectionOptions.Sort);
 
 
 

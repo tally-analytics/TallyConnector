@@ -105,7 +105,8 @@ public class TDLMessage
                       List<string>? computevar = null,
                       List<string>? compute = null,
                       List<TallyCustomObject>? objects = null,
-                      YesNo isInitialize = YesNo.No)
+                      YesNo isInitialize = YesNo.No,
+                      List<string>? sort = null)
     {
 
         Object = objects;
@@ -558,7 +559,8 @@ public class Collection : DCollection
                       List<string>? filters = null,
                       List<string>? computevar = null,
                       List<string>? compute = null,
-                      YesNo Isintialize = YesNo.No)
+                      YesNo Isintialize = YesNo.No,
+                      List<string>? sort = null)
     {
         Name = colName;
         Type = colType;
@@ -581,7 +583,10 @@ public class Collection : DCollection
         {
             Compute.AddRange(compute);
         }
-
+        if(sort != null)
+        {
+            Sort = sort;
+        }
         SetAttributes(isInitialize: Isintialize);
 
 
