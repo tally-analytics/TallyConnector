@@ -671,6 +671,7 @@ public partial class TallyService : ITallyService
         Xml = XmlTextRegex.Replace(Xml, CleanXml);
         Xml = XmlAttributeRegex.Replace(Xml, CleanXml);
         Xml = Xml.Replace("&#4; ", "");
+        Xml = Xml.Replace("&#x4; ", "");
         return Xml;
     }
     /// <inheritdoc/>
