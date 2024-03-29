@@ -148,6 +148,7 @@ public class TallyAmount : IXmlSerializable
 
     public static implicit operator decimal(TallyAmount amount)
     {
+        if (amount == null) return 0;
         if (amount.IsDebit)
         {
             return amount.Amount * -1;
